@@ -1,0 +1,16 @@
+name: GitHub Actions Demo
+run-name: GitHub Actions Demo
+
+# 觸發此action的時機
+on:
+  push:
+    branchs:  # 只要有任何一個commit被push，就會觸發此action
+      '*'
+  workflow_dispatch:  # 可以手動執行此action
+
+# 預先定義此action要幹嘛
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '執行成功'
